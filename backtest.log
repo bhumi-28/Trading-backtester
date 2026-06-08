@@ -1,0 +1,46 @@
+2026-06-08 22:38:33,620 [INFO] __main__ — Starting backtest with params: symbol=GC=F, start=2018-01-01, end=2026-06-08, short=50, long=200, capital=100000.00
+2026-06-08 22:38:33,621 [INFO] backtester.data_fetcher — Downloading fresh data for GC=F from 2018-01-01 to 2026-06-08
+2026-06-08 22:38:35,027 [ERROR] __main__ — Backtest failed
+Traceback (most recent call last):
+  File "C:\Users\Bhumi\OneDrive\Desktop\Algorithmic Trading Backtester\trading-backtester\main.py", line 43, in run_backtest
+    df = fetcher.get_ohlcv(args.symbol, args.start, args.end)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bhumi\OneDrive\Desktop\Algorithmic Trading Backtester\trading-backtester\backtester\data_fetcher.py", line 50, in get_ohlcv
+    df = df.dropna(subset=["Date"]).copy()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bhumi\OneDrive\Desktop\Algorithmic Trading Backtester\trading-backtester\venv\Lib\site-packages\pandas\core\frame.py", line 7801, in dropna
+    raise KeyError(np.array(subset)[check].tolist())
+KeyError: ['Date']
+2026-06-08 22:52:30,475 [INFO] __main__ — Starting backtest with params: symbol=GC=F, start=2018-01-01, end=2026-06-08, short=50, long=200, capital=100000.00
+2026-06-08 22:52:30,475 [INFO] backtester.data_fetcher — Downloading fresh data for GC=F from 2018-01-01 to 2026-06-08
+2026-06-08 22:52:31,446 [INFO] backtester.data_fetcher — Fresh download saved to data\GC=F_2018-01-01_2026-06-08.csv
+2026-06-08 22:52:31,463 [INFO] backtester.data_fetcher — Validated GC=F: 2119 rows, date range 2018-01-02 to 2026-06-05
+2026-06-08 22:52:31,465 [INFO] backtester.data_fetcher — Validated GC=F: 2119 rows, date range 2018-01-02 to 2026-06-05
+2026-06-08 22:55:45,538 [INFO] __main__ — Starting backtest with params: symbol=GC=F, start=2018-01-01, end=2026-06-08, short=50, long=200, capital=100000.00
+2026-06-08 22:55:45,538 [INFO] backtester.data_fetcher — Cache hit for GC=F at data\GC=F_2018-01-01_2026-06-08.csv
+2026-06-08 22:55:45,584 [INFO] backtester.data_fetcher — Validated GC=F: 2119 rows, date range 2018-01-02 to 2026-06-05
+2026-06-08 22:55:45,587 [INFO] backtester.data_fetcher — Validated GC=F: 2119 rows, date range 2018-01-02 to 2026-06-05
+2026-06-08 22:55:45,760 [ERROR] __main__ — Backtest failed
+Traceback (most recent call last):
+  File "C:\Users\Bhumi\OneDrive\Desktop\Algorithmic Trading Backtester\trading-backtester\main.py", line 55, in run_backtest
+    fig = ChartBuilder().combined_dashboard(result["df"], args.symbol, args.capital)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bhumi\OneDrive\Desktop\Algorithmic Trading Backtester\trading-backtester\visualizer\charts.py", line 106, in combined_dashboard
+    price_figure = self.price_with_signals(df, symbol)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bhumi\OneDrive\Desktop\Algorithmic Trading Backtester\trading-backtester\visualizer\charts.py", line 11, in price_with_signals
+    figure = go.Figure(template="plotly_white")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bhumi\OneDrive\Desktop\Algorithmic Trading Backtester\trading-backtester\venv\Lib\site-packages\plotly\graph_objs\_figure.py", line 72, in __init__
+    super().__init__(data, layout, frames, skip_invalid, **kwargs)
+  File "C:\Users\Bhumi\OneDrive\Desktop\Algorithmic Trading Backtester\trading-backtester\venv\Lib\site-packages\plotly\basedatatypes.py", line 665, in __init__
+    raise type_err
+TypeError: invalid Figure property: template
+template
+Bad property path:
+template
+^^^^^^^^
+2026-06-08 22:55:56,083 [INFO] __main__ — Starting backtest with params: symbol=GC=F, start=2018-01-01, end=2026-06-08, short=50, long=200, capital=100000.00
+2026-06-08 22:55:56,085 [INFO] backtester.data_fetcher — Cache hit for GC=F at data\GC=F_2018-01-01_2026-06-08.csv
+2026-06-08 22:55:56,125 [INFO] backtester.data_fetcher — Validated GC=F: 2119 rows, date range 2018-01-02 to 2026-06-05
+2026-06-08 22:55:56,128 [INFO] backtester.data_fetcher — Validated GC=F: 2119 rows, date range 2018-01-02 to 2026-06-05
